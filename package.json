@@ -1,0 +1,16 @@
+{
+  "name": "nuvio-bdix-plugin",
+  "version": "1.0.0",
+  "description": "Nuvio scrapers for Bangladeshi BDIX FTP/media servers (ported from CloudStream extensions)",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.js",
+    "test": "node scripts/test.js",
+    "test:mock": "node scripts/mock-test.js"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0",
+    "esbuild": "^0.25.10"
+  }
+}

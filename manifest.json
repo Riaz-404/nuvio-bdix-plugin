@@ -1,0 +1,186 @@
+{
+  "name": "BDIX Repo for Nuvio",
+  "version": "1.0.0",
+  "description": "Bangladeshi BDIX FTP / media servers for Nuvio. Ported from the Niloy-Sarker/niloy-cloudstream and redowan99/Redowan-CloudStream CloudStream extensions.",
+  "author": "nuvio-bdix-plugin",
+  "scrapers": [
+    {
+      "id": "circleftp",
+      "name": "Circle FTP (BDIX)",
+      "description": "Circle FTP BDIX server (new.circleftp.net). Movies, TV series, anime, Hindi/South/Korean. Only reachable on BDIX-connected ISPs in Bangladesh.",
+      "filename": "providers/circleftp.js",
+      "contentLanguage": [
+        "en",
+        "hi",
+        "bn",
+        "ko"
+      ],
+      "version": "1.0.0",
+      "author": "nuvio-bdix-plugin",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "formats": [
+        "mkv",
+        "mp4"
+      ]
+    },
+    {
+      "id": "dhakaflix",
+      "name": "DhakaFlix (BDIX)",
+      "description": "DhakaFlix h5ai servers 172.16.50.7/9/12/14. English, Hindi, South, Kolkata, Korean, anime and TV series. Only reachable on BDIX-connected ISPs.",
+      "filename": "providers/dhakaflix.js",
+      "contentLanguage": [
+        "en",
+        "hi",
+        "bn",
+        "ko"
+      ],
+      "version": "1.0.0",
+      "author": "nuvio-bdix-plugin",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "formats": [
+        "mkv",
+        "mp4"
+      ]
+    },
+    {
+      "id": "dflix",
+      "name": "Dflix / Discovery FTP (BDIX)",
+      "description": "Discovery FTP (dflix.discoveryftp.net / movies.discoveryftp.net). Movies and series. Only reachable on BDIX-connected ISPs.",
+      "filename": "providers/dflix.js",
+      "contentLanguage": [
+        "en",
+        "hi",
+        "bn"
+      ],
+      "version": "1.0.0",
+      "author": "nuvio-bdix-plugin",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "formats": [
+        "mkv",
+        "mp4"
+      ]
+    },
+    {
+      "id": "ftpbd",
+      "name": "FTPBD Emby (BDIX)",
+      "description": "FTPBD Emby server (media.ftpbd.net:8096) using the public guest account. Only reachable on BDIX-connected ISPs.",
+      "filename": "providers/ftpbd.js",
+      "contentLanguage": [
+        "en",
+        "hi",
+        "bn"
+      ],
+      "version": "1.0.0",
+      "author": "nuvio-bdix-plugin",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "formats": [
+        "mkv",
+        "mp4"
+      ]
+    },
+    {
+      "id": "roarzone",
+      "name": "RoarZone Emby (BDIX)",
+      "description": "RoarZone Emby server (play.roarzone.info) using the public guest account. Only reachable on BDIX-connected ISPs.",
+      "filename": "providers/roarzone.js",
+      "contentLanguage": [
+        "en",
+        "hi",
+        "bn"
+      ],
+      "version": "1.0.0",
+      "author": "nuvio-bdix-plugin",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "formats": [
+        "mkv",
+        "mp4"
+      ]
+    },
+    {
+      "id": "fmftp",
+      "name": "FMFTP (BDIX)",
+      "description": "FMFTP (fmftp.net) movies and TV, matched by TMDB id. Only reachable on BDIX-connected ISPs.",
+      "filename": "providers/fmftp.js",
+      "contentLanguage": [
+        "en",
+        "hi",
+        "ko"
+      ],
+      "version": "1.0.0",
+      "author": "nuvio-bdix-plugin",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "formats": [
+        "mkv",
+        "mp4"
+      ]
+    },
+    {
+      "id": "iccftp",
+      "name": "ICC FTP (BDIX)",
+      "description": "ICC FTP (10.16.100.244). Movies and series. Only reachable on ICC-connected ISPs.",
+      "filename": "providers/iccftp.js",
+      "contentLanguage": [
+        "en",
+        "hi",
+        "bn"
+      ],
+      "version": "1.0.0",
+      "author": "nuvio-bdix-plugin",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "formats": [
+        "mkv",
+        "mp4"
+      ]
+    },
+    {
+      "id": "ctgmovies",
+      "name": "CTGMovies",
+      "description": "ctgmovies.com movies, TV and anime, matched by TMDB id; files served from ctgfun.com.",
+      "filename": "providers/ctgmovies.js",
+      "contentLanguage": [
+        "en",
+        "hi",
+        "bn"
+      ],
+      "version": "1.0.0",
+      "author": "nuvio-bdix-plugin",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "formats": [
+        "mkv",
+        "mp4"
+      ]
+    }
+  ]
+}
