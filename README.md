@@ -26,7 +26,7 @@ BDIX servers are FTP and media servers hosted inside Bangladesh's local internet
 1. Open Nuvio and go to **Settings → Plugins → Add repository**.
 2. Paste the repository URL:
    ```
-   https://raw.githubusercontent.com/<owner>/<repo>/main
+   https://raw.githubusercontent.com/Riaz-404/nuvio-bdix-plugin/main
    ```
    Nuvio appends `/manifest.json` itself, so don't add it.
 3. Enable the sources your ISP can reach and disable the rest.
