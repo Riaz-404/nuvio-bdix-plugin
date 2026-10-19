@@ -22,17 +22,6 @@ export function finalize(streams) {
   return sortStreams(dedupeStreams(streams.filter(Boolean)));
 }
 
-// Nuvio kills a scraper call after 60 s; give up a little earlier and return nothing.
-const DEADLINE_MS = 50000;
-
-function withDeadline(promise, ms) {
-  let timer;
-  const timeout = new Promise((resolve) => {
-    timer = setTimeout(() => resolve(null), ms);
-  });
-  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
-}
-
 // Standard getStreams wrapper: resolve TMDB, run the source, never throw.
 export function createProvider(id, run) {
   return async function getStreams(tmdbId, mediaType, season, episode) {
@@ -45,7 +34,9 @@ export function createProvider(id, run) {
       const s = season == null ? null : Number(season);
       const e = episode == null ? null : Number(episode);
       if (info.isTv && (!s || !e)) return [];
-      const streams = finalize((await withDeadline(run(info, s, e), DEADLINE_MS)) || []);
+      // No deadline timer here: in Nuvio a pending timer would hold the call open until it
+      // fires. Nuvio already stops a scraper after 60 s.
+      const streams = finalize((await run(info, s, e)) || []);
       console.log('[' + id + '] ' + info.title + (info.isTv ? ' S' + s + 'E' + e : '') + ': ' + streams.length + ' streams');
       return streams;
     } catch (err) {

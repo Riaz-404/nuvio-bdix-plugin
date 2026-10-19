@@ -26,9 +26,10 @@ module.exports = __toCommonJS(dhakaflix_exports);
 
 // src/common/http.js
 var UA = "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36";
+var IN_NUVIO = typeof globalThis !== "undefined" && typeof globalThis.__native_fetch === "function";
 async function request(url, opts = {}) {
   const { timeout = 15e3, headers = {}, ...rest } = opts;
-  const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+  const controller = !IN_NUVIO && typeof AbortController !== "undefined" ? new AbortController() : null;
   const timer = controller ? setTimeout(() => controller.abort(), timeout) : null;
   try {
     const res = await fetch(url, {
@@ -348,14 +349,6 @@ function makeStream({ provider, label: label2, url, title, quality, size, header
 function finalize(streams) {
   return sortStreams(dedupeStreams(streams.filter(Boolean)));
 }
-var DEADLINE_MS = 5e4;
-function withDeadline(promise, ms) {
-  let timer;
-  const timeout = new Promise((resolve) => {
-    timer = setTimeout(() => resolve(null), ms);
-  });
-  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
-}
 function createProvider(id, run2) {
   return async function getStreams2(tmdbId, mediaType, season, episode) {
     try {
@@ -367,7 +360,7 @@ function createProvider(id, run2) {
       const s = season == null ? null : Number(season);
       const e = episode == null ? null : Number(episode);
       if (info.isTv && (!s || !e)) return [];
-      const streams = finalize(await withDeadline(run2(info, s, e), DEADLINE_MS) || []);
+      const streams = finalize(await run2(info, s, e) || []);
       console.log("[" + id + "] " + info.title + (info.isTv ? " S" + s + "E" + e : "") + ": " + streams.length + " streams");
       return streams;
     } catch (err) {

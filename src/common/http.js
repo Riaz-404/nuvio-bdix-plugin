@@ -4,9 +4,15 @@
 export const UA =
   'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36';
 
+// Inside Nuvio, fetch ignores AbortSignal, and every setTimeout is a native sleep that
+// keeps the plugin call open until it elapses (clearTimeout doesn't stop it). So timeouts
+// are only applied outside Nuvio (Node test scripts); in Nuvio the native HTTP client's
+// own timeouts and the 60 s plugin limit apply.
+const IN_NUVIO = typeof globalThis !== 'undefined' && typeof globalThis.__native_fetch === 'function';
+
 export async function request(url, opts = {}) {
   const { timeout = 15000, headers = {}, ...rest } = opts;
-  const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+  const controller = !IN_NUVIO && typeof AbortController !== 'undefined' ? new AbortController() : null;
   const timer = controller ? setTimeout(() => controller.abort(), timeout) : null;
   try {
     const res = await fetch(url, {

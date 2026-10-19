@@ -1,6 +1,6 @@
 {
   "name": "BDIX Repo for Nuvio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bangladeshi BDIX FTP / media servers for Nuvio. Ported from the Niloy-Sarker/niloy-cloudstream and redowan99/Redowan-CloudStream CloudStream extensions.",
   "author": "nuvio-bdix-plugin",
   "scrapers": [
@@ -15,7 +15,7 @@
         "bn",
         "ko"
       ],
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "nuvio-bdix-plugin",
       "supportedTypes": [
         "movie",
@@ -38,7 +38,7 @@
         "bn",
         "ko"
       ],
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "nuvio-bdix-plugin",
       "supportedTypes": [
         "movie",
@@ -60,7 +60,7 @@
         "hi",
         "bn"
       ],
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "nuvio-bdix-plugin",
       "supportedTypes": [
         "movie",
@@ -82,7 +82,7 @@
         "hi",
         "bn"
       ],
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "nuvio-bdix-plugin",
       "supportedTypes": [
         "movie",
@@ -104,7 +104,7 @@
         "hi",
         "bn"
       ],
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "nuvio-bdix-plugin",
       "supportedTypes": [
         "movie",
@@ -126,7 +126,7 @@
         "hi",
         "ko"
       ],
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "nuvio-bdix-plugin",
       "supportedTypes": [
         "movie",
@@ -148,7 +148,7 @@
         "hi",
         "bn"
       ],
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "nuvio-bdix-plugin",
       "supportedTypes": [
         "movie",
@@ -170,7 +170,7 @@
         "hi",
         "bn"
       ],
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "nuvio-bdix-plugin",
       "supportedTypes": [
         "movie",
